@@ -1,6 +1,6 @@
 {
   "name": "bap-logo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Logo for Bap and bapjs.org",
   "private": true,
   "homepage": "http://bapjs.org",
@@ -13,12 +13,16 @@
     "url": "https://github.com/adamrenklint/bap-logo/issues"
   },
   "scripts": {
-    "start": "npm run generate:large && npm run generate:medium && npm run generate:small",
+    "start": "npm run generate:large && npm run generate:medium && npm run generate:small && npm run copy",
     "generate:large": "svg2png --scale 2.0 --out dist -- src/bap.svg",
     "postgenerate:large": "mv dist/bap.png dist/bap-large.png",
     "generate:medium": "svg2png --scale 1.0 --out dist -- src/bap.svg",
     "postgenerate:medium": "mv dist/bap.png dist/bap-medium.png",
     "generate:small": "svg2png --scale 0.5 --out dist -- src/bap.svg",
-    "postgenerate:small": "mv dist/bap.png dist/bap-small.png"
+    "postgenerate:small": "mv dist/bap.png dist/bap-small.png",
+    "copy": "cp src/bap.svg dist"
+  },
+  "devDependencies": {
+    "svg2png": "^1.1.1"
   }
 }
