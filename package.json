@@ -1,0 +1,24 @@
+{
+  "name": "bap-logo",
+  "version": "1.0.0",
+  "description": "Logo for Bap and bapjs.org",
+  "private": true,
+  "homepage": "http://bapjs.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamrenklint/bap-logo.git"
+  },
+  "author": "Adam Renklint <adam@renklint.com> (http://adamrenklint.com)",
+  "bugs": {
+    "url": "https://github.com/adamrenklint/bap-logo/issues"
+  },
+  "scripts": {
+    "start": "npm run generate:large && npm run generate:medium && npm run generate:small",
+    "generate:large": "svg2png --scale 2.0 --out dist -- src/bap.svg",
+    "postgenerate:large": "mv dist/bap.png dist/bap-large.png",
+    "generate:medium": "svg2png --scale 1.0 --out dist -- src/bap.svg",
+    "postgenerate:medium": "mv dist/bap.png dist/bap-medium.png",
+    "generate:small": "svg2png --scale 0.5 --out dist -- src/bap.svg",
+    "postgenerate:small": "mv dist/bap.png dist/bap-small.png"
+  }
+}
